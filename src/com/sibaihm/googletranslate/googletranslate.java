@@ -34,9 +34,9 @@ import java.util.Arrays;
 
 public class GoogleTranslate extends AsyncTask<String, Void, String> {
 
-	/*
-	*	Your Google API Key here
-	*/
+    /*
+    *	Your Google API Key here
+    */
 	
     private final String API_KEY = "";
     
@@ -67,9 +67,9 @@ public class GoogleTranslate extends AsyncTask<String, Void, String> {
         
         try {
             
-        	/*
-        	 *	Objects needed for the translate object
-        	 */
+            /*
+             *	Objects needed for the translate object
+             */
         	
             NetHttpTransport netHttpTransport 	= new NetHttpTransport();
  
