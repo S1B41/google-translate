@@ -16,7 +16,7 @@
 
 /*
  * 
- *	The Google Cloud Translation API Client Library can be download from:
+ *	The Google Cloud Translation API Client Library can be downloaded from:
  *	https://developers.google.com/api-client-library/java/apis/translate/v2
  *
  */
