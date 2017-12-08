@@ -35,7 +35,7 @@ import java.util.Arrays;
 public class GoogleTranslate extends AsyncTask<String, Void, String> {
 
     /*
-    *	Your Google API Key here
+     *	Your Google API Key here
     */
 	
     private final String API_KEY = "";
@@ -102,10 +102,10 @@ public class GoogleTranslate extends AsyncTask<String, Void, String> {
             TranslationsListResponse response = listToTranslate.execute();
 
             /*
-            *	The response has the form of: {"translatedText":"blabla"}
-            *	We need only the translated text between the second double quotes pair
-            * 	therefore using getTranslatedText
-            */
+             *	The response has the form of: {"translatedText":"blabla"}
+             *	We need only the translated text between the second double quotes pair
+             * 	therefore using getTranslatedText
+             */
             
             return response.getTranslations().get(0).getTranslatedText();
 
