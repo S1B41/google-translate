@@ -2,7 +2,7 @@
 /*
  *
  *
- *	Created by Sibai Haj Mousa 2017
+ *	Created by Sibai H. Mousa 2017
  *	Version 1.0
  *
  *
@@ -10,11 +10,6 @@
  *	You can obtain a copy of the license under:
  *	https://www.gnu.org/licenses/gpl-3.0.en.html
  *
- *
- */
-
-
-/*
  * 
  *	The Google Cloud Translation API Client Library can be downloaded from:
  *	https://developers.google.com/api-client-library/java/apis/translate/v2
