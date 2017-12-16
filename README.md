@@ -18,7 +18,7 @@ It performs the translation in background and returns a string with the result
 
 ## How to use it?
 
-* Fork the repository or download the class from src and put it somewhere in your project folder
+* Clone the repository or download the class from src and put it somewhere in your project folder
 * Import the package
 * Create an object of the class
 ```java
