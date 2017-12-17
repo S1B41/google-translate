@@ -1,4 +1,4 @@
-# AndroidGoogleTranslateAPI
+# google-translate
 
 Translate text in Android using Google Cloud Translation API
 
