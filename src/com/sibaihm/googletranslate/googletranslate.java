@@ -1,18 +1,8 @@
 
 /*
  *
- *
- *	Created by Sibai H. Mousa 2017
- *	Version 1.0
- *
- *
- *	Licensed under the GNU General Public License v3.0
- *	You can obtain a copy of the license under:
- *	https://www.gnu.org/licenses/gpl-3.0.en.html
- *
- * 
- *	The Google Cloud Translation API Client Library can be downloaded from:
- *	https://developers.google.com/api-client-library/java/apis/translate/v2
+ * The Google Cloud Translation API Client Library can be downloaded from:
+ * https://developers.google.com/api-client-library/java/apis/translate/v2
  *
  */
 
@@ -30,32 +20,32 @@ import java.util.Arrays;
 public class GoogleTranslate extends AsyncTask<String, Void, String> {
 
     /*
-     *	Your Google API Key here
+     * Your Google API Key here
     */
 	
     private final String API_KEY = "";
     
     /*
-     *	Performing the translation in background process
+     * Performing the translation in background process
      */
     
     @Override
     protected String doInBackground(String... params){
     	
     	/*
-    	 * 	The text which will be translated
+    	 *  The text which will be translated
     	 */
 
         final String textToTranslate = params[0];
         
         /*
-         *	The source language to be translated
+         * The source language to be translated
          */
         
         final String SOURCE_LANGUAGE = params[1];
         
         /*
-         *	The wished language to be translated to
+         * The wished language to be translated to
          */
         
         final String TARGET_LANGUAGE = params[2];
@@ -63,7 +53,7 @@ public class GoogleTranslate extends AsyncTask<String, Void, String> {
         try {
             
             /*
-             *	Objects needed for the translate object
+             * Objects needed for the translate object
              */
         	
             NetHttpTransport netHttpTransport 	= new NetHttpTransport();
@@ -71,53 +61,49 @@ public class GoogleTranslate extends AsyncTask<String, Void, String> {
             JacksonFactory jacksonFactory 		= new JacksonFactory();
             
             /*
-             *	Creating the Google Translate object
+             * Creating the Google Translate object
              */
             
             Translate translate = new Translate.Builder(netHttpTransport, jacksonFactory, null).build();
             
             /*
-             *	Setting the textToTranslate, the API_KEY and TARGET_LANGUAGE
+             * Setting the textToTranslate, the API_KEY and TARGET_LANGUAGE
              */
 
             Translate.Translations.List listToTranslate = translate.new Translations().list(
                 Arrays.asList(textToTranslate), TARGET_LANGUAGE).setKey(API_KEY);
             
             /*
-             * 	If you want to let Google detects the language automatically, remove the next line
-             * 	This line set the source language of the translated text
+             *  If you want to let Google detects the language automatically, remove the next line
+             *  This line set the source language of the translated text
              */
             
             listToTranslate.setSource(SOURCE_LANGUAGE);
             
             /*
-             *	Executing the translation and saving the response in the response object
+             * Executing the translation and saving the response in the response object
              */
 
             TranslationsListResponse response = listToTranslate.execute();
 
             /*
-             *	The response has the form of: {"translatedText":"blabla"}
-             *	We need only the translated text between the second double quotes pair
-             * 	therefore using getTranslatedText
+             * The response has the form of: {"translatedText":"blabla"}
+             * We need only the translated text between the second double quotes pair
+             *  therefore using getTranslatedText
              */
             
             return response.getTranslations().get(0).getTranslatedText();
-
         } catch (Exception e){
         	
             Log.e("Google Response ", e.getMessage());
             
             /*
-             *	I would return empty string if there is an error
-             *	to let the method which invoked the translating method know that there is an error
-             *	and subsequently it deals with it
+             * I would return empty string if there is an error
+             * to let the method which invoked the translating method know that there is an error
+             * and subsequently it deals with it
              */
             
             return "";
-        
         }
-
     }
-
 }
