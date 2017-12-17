@@ -74,8 +74,8 @@ public class GoogleTranslate extends AsyncTask<String, Void, String> {
                 Arrays.asList(textToTranslate), TARGET_LANGUAGE).setKey(API_KEY);
             
             /*
-             *  If you want to let Google detects the language automatically, remove the next line
-             *  This line set the source language of the translated text
+             * If you want to let Google detects the language automatically, remove the next line
+             * This line set the source language of the translated text
              */
             
             listToTranslate.setSource(SOURCE_LANGUAGE);
@@ -89,7 +89,7 @@ public class GoogleTranslate extends AsyncTask<String, Void, String> {
             /*
              * The response has the form of: {"translatedText":"blabla"}
              * We need only the translated text between the second double quotes pair
-             *  therefore using getTranslatedText
+             * therefore using getTranslatedText
              */
             
             return response.getTranslations().get(0).getTranslatedText();
